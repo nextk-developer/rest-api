@@ -445,6 +445,6 @@ POST /v2/va/snapshot
 
 | Name | Type | Description |
 | :---- | :---- |:---- |
-| imageData | String | 영상 데이터 (jpeg -> base64인코딩) |
+| imageData | String | 영상 데이터 (Jpeg -> Base64 Encoding) |
 | code | Integer | 오류 코드 (**[Error Code](models.md#error-code)**) |
 | message | String | 오류 메시지 |
