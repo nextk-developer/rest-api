@@ -112,7 +112,7 @@ POST /v2/va/register-facedb
 <br>
 
 <br>
-<img src="../../Images/help_rgist_face.jpg" width="420px" height="100px" title="검출 이벤트 결과" alt="flowImage">
+<img src="help_rgist_face.jpg" width="420px" height="100px" title="검출 이벤트 결과" alt="flowImage">
 </img>
 </br>
 
