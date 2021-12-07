@@ -112,9 +112,7 @@ POST /v2/va/register-facedb
 <br>
 
 <br>
-<img src="help_rgist_face.jpg" width="420px" height="100px" title="검출 이벤트 결과" alt="flowImage">
-</img>
-</br>
+<img src="help_rgist_face.jpg" width="420px" height="100px" title="검출 이벤트 결과" alt="flowImage"/>
 
   * 이목구비 확인 및 정면이 아닐 경우 매칭 성능 저하 요인
     
