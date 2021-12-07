@@ -110,9 +110,14 @@ POST /v2/va/register-facedb
 1) 얼굴 등록 이미지는 1~4장 이미지 등록 가능 (2장 이상 권장)
 2) 얼굴 등록 예시
 <br>
+
 <br>
-<img src="../../../images/doc_regist_face.jpg" width="420px" height="100px" title="검출 이벤트 결과" alt="flowImage"/>
-    * 이목구비 확인 및 정면이 아닐 경우 매칭 성능 저하 요인
+<img src="../../Images/help_rgist_face.jpg" width="420px" height="100px" title="검출 이벤트 결과" alt="flowImage">
+</img>
+</br>
+
+  * 이목구비 확인 및 정면이 아닐 경우 매칭 성능 저하 요인
+    
 <br/>
 
 <br>
