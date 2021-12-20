@@ -92,6 +92,7 @@ POST /v2/va/register-facedb
 
 {
     "nodeId":"6d286401",
+    "matchingScore":0.5,
     "faceImages":[
         "/9j/4AAQSkZJRgABAQEAYABgAAD/...",
         "/9j/4AAQSkZJRgABAQEAYABgAAD/...",
@@ -104,6 +105,7 @@ POST /v2/va/register-facedb
 | Name | Type | Description | Required |
 | :---- | :---- |:---- |:---- |
 | nodeId | String | 컴퓨팅 노드 ID | O |
+| matchingScore | Double | 비교 대상과의 유사도 (정규화 값 0 ~ 1)| O |
 | faceImages | String[] | 등록 얼굴 이미지 (Jpeg -> Base64 Encoding) | O |
 
 * TIP
