@@ -146,3 +146,50 @@ POST /v2/va/register-facedb
 | message | String | 오류 메시지 |
 
 <br>
+
+# 등록 얼굴 삭제
+
+이 API를 이용하여 관심 얼굴를 삭제할 수 있습니다.
+
+#### Request
+
+```
+POST /v2/va/remove-facedb
+
+{
+    "nodeId": "6d286401",
+    "faceId": "bd7ea613",
+}
+```
+
+| Name | Type | Description | Required |
+| :---- | :---- |:---- |:---- |
+| nodeId | String | 컴퓨팅 노드 ID | O |
+| faceId | String | 등록된 얼굴 ID | O |
+
+<br>
+
+#### Response
+```
+//Ok
+{
+{
+  "faceId": "bd7ea613",
+  "code" : 0
+}
+}
+//Fail
+{
+    "code" : 0,
+    "message" : "reason"
+}
+
+```
+
+| Name | Type | Description |
+| :---- | :---- |:---- |
+| faceId | String | 등록 얼굴 ID |
+| code | Integer | 오류 코드 ([Error Code](models.md#error-code)) |
+| message | String | 오류 메시지 |
+
+<br>
