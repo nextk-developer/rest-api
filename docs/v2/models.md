@@ -63,22 +63,30 @@ REST API 파라메터로 사용되는 JSON 오브젝트와 Enum들입니다.
 
 | Enum | Description |
 | :---- | :---- |
+| EVT_LONGSTAY | 체류 |
 | EVT_LOITERING | 배회 |
 | EVT_INTRUSION | 침입 |
+| EVT_FALLDOWN | 쓰러짐 |
+| EVT_ABANDONMENT | 유기 |
+| EVT_VIOLENCE | 싸움 |
+| EVT_PEOPLE_COUNTING | 사람 카운트 |
 | EVT_QUEUEING | 대기열 |
-| EVT_ABNORMAL_CONGESTION | 영역 ROI 내 이동흐름 정체 (정상흐름 대비 상대적 정체도) |
-| EVT_ABNORMAL_OBJ_COUNT | 영역 ROI 내 개체밀집 (정의된 개체수 이상의 객체 존재) |
+| EVT_ABNORMAL_CONGESTION | 혼잡도 |
+| EVT_ABNORMAL_OBJ_COUNT | 영역 과밀집 |
 | EVT_ROI_COUNT | 영역 ROI 카운팅 |
-| EVT_LINE_COUNT | ROI 카운팅 |
+| EVT_LINE_COUNT | LINE 양방향 카운팅 |
 | EVT_ILLEGAL_PARKING | 불법 주정차 |
 | EVT_WRONG_WAY | 역주행 |
 | EVT_DIRECTION_COUNTING | 방향성 이동(직전, 좌/우회전, 유턴) 카운팅 |
+| EVT_PEOPLE_CONGESTION_LEVEL | 사람 혼잡도 수준 |
 | EVT_VEHICLE_SPEED | 차량 속도 |
 | EVT_VEHICLE_DENSITY | 차량 밀도 |
 | EVT_STOP_VEHICLE_COUNTING | 정지 차량 카운팅 |
-| EVT_SIGNAL_WAITING_TIME | 신호 대기 시간 |
-| EVT_PARKING_SPACE | 주차공간 점유 여부 검출 |
-| EVT_CROSSWALK_QUEUEING | 횡단보도 대기열 카운팅 |
+| EVT_LINE_ENTER | LINE 단방향 통과 |
+
+| EVT_FLAME | 화재(불꽃, 연기) |
+| EVT_FACE_MATCHING | 얼굴 등록 매칭 |
+| EVT_FACE_MASKED | 얼굴 마스크 미착용 |
 
 <br><br>
 
