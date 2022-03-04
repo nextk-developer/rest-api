@@ -14,4 +14,4 @@ has_children: false
 
 아래 버튼링크를 통해 gRPC용 proto3 IDL파일을 확인해주십시오.
 
-[비디오 분석결과 gRPC 연동 인터페이스 보기](https://github.com/nextk-developer/protobuf/blob/master/vameta.proto){: .btn .btn-blue }
+[비디오 분석결과 gRPC 연동 인터페이스 보기](https://github.com/nextk-developer/protobuf/blob/master/sendMetadata.proto){: .btn .btn-blue }
