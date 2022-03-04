@@ -45,7 +45,13 @@ POST /v2/va/create-roi
       "X": 0.0,
       "Y": 1.0
     }
-  ]
+  ],
+  "eventFilter": {
+    "objectsTarget":
+    [
+      "PERSON"
+    ]
+  }
 }
 ```
 
@@ -57,8 +63,9 @@ POST /v2/va/create-roi
 | roiDots | JsonObject[] | ROI 라인 설정([RoiDot](#roi-dot)) | O |
 | eventType | Enum | 영역 속성([EventType](models.md#EventType))| O |
 | description | String | 관심 영역 설명 | X |
-| stayTime | Integer | 발생 지연 시간 | X |
-| numberOf | Integer | 최소 발생 객체수 조건 | X |
+| eventFilter | JsonObject[] | 이벤트 상세 필터링 설정([EventFilter](models.md#EventFilter)) | X | 
+<!-- | stayTime | Integer | 발생 지연 시간 | X |
+| numberOf | Integer | 최소 발생 객체수 조건 | X | -->
 
 <br/>
 

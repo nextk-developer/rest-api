@@ -19,8 +19,8 @@ REST API 파라메터로 사용되는 JSON 오브젝트와 Enum들입니다.
 | channelId | string | 채널 ID |
 | inputUri | string | 입력 영상 주소 |
 | channelName | string | 채널 이름 |
-| inputType | int | 입력 영상 종류(**[InputType](models.md#inputtype)**) |
-| status | Enum | 채널 상태 (**[ChannelStatus](#channelstatus)**)|
+<!-- | inputType | int | 입력 영상 종류(**[InputType](models.md#inputtype)**) | -->
+<!-- | status | Enum | 채널 상태 (**[ChannelStatus](#channelstatus)**)| -->
 
 <br><br>
 
@@ -38,13 +38,21 @@ REST API 파라메터로 사용되는 JSON 오브젝트와 Enum들입니다.
 | Enum | Description |
 | :---- | :---- |
 | PERSON | 사람 |
+| BIKE | 자전거 |
 | CAR | 일반 차량 |
-| MOTOCYCLE | 오토바이 |
+| MOTORCYCLE | 오토바이 |
 | BUS | 대형 버스 |
 | TRUCK | 트럭 |
-| FLAME | 불꽃 |
-| SMOKE | 연기 |
-| FACE | 얼굴 |
+| EXCAVATOR | 굴착기 |
+| TANKTRUCK | 탱크트럭 |
+| FORKLIFT | 지게차 |
+| LEMICON | 레미콘 |
+| CULTIVATOR | 경운기 |
+| TRACTOR | 트랙터 |
+| SMOKE | 불꽃 |
+| FLAME | 연기 |
+| FACE_MAN | 얼굴_남자 |
+| FACE_WOMAN | 얼굴_여자 |
 
 <br>
 
@@ -83,7 +91,6 @@ REST API 파라메터로 사용되는 JSON 오브젝트와 Enum들입니다.
 | EVT_VEHICLE_DENSITY | 차량 밀도 |
 | EVT_STOP_VEHICLE_COUNTING | 정지 차량 카운팅 |
 | EVT_LINE_ENTER | LINE 단방향 통과 |
-
 | EVT_FLAME | 화재(불꽃, 연기) |
 | EVT_FACE_MATCHING | 얼굴 등록 매칭 |
 | EVT_FACE_MASKED | 얼굴 마스크 미착용 |
@@ -165,6 +172,14 @@ REST API 파라메터로 사용되는 JSON 오브젝트와 Enum들입니다.
 | cameraPanDegree | Double | 카메라 Pan 각도 |
 | cameraTiltDegree | Double | 카메라 Pan 각도 |
 | cameraHorizontalAngle | Double | 카메라 수평각 |
+
+<br>
+
+# EventFilter
+
+| Name | Type | Description |
+| :---- | :---- |:---- |
+| objectsTarget | ObjectType[] | 검출 객체 대상(**[ObjectType](models.md#ObjectType)**) | 
 
 <br>
 

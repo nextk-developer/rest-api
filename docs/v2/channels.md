@@ -27,18 +27,25 @@ POST /v2/va/register-channel
 
 {
   "nodeId": "5c009c52",
-  "channelName": "TEST_CHANNEL_NAME",
-  "inputUri": "rtsp://192.168.0.70/vod/pertest_5m_15m_fall",
-  "inputType": null,
+  "channels" : 
+  [
+      {
+        "channelName": "TEST_CHANNEL_NAME",
+        "inputUri": "rtsp://nextk.synology.me/vod/sample_abnormal"
+      },
+      {
+        "channelName": "TEST_CHANNEL_NAME",
+        "inputUri": "rtsp://nextk.synology.me/vod/sample_fire"
+      }
+  ]
 }
 ```
 
 | Name | Type | Description | Required |
 | :---- | :---- |:---- |:---- |
 | nodeId | String | 컴퓨팅 노드 ID | O |
-| channelName | String | 채널 별칭 | O |
-| inputUri | String | 입력 영상 URI (RTSP 주소, 파일 경로) | O |
-| inputType | Enum | 입력 영상 종류 (**[InputType](models.md#inputtype)**) | O |
+| channels | Channel[] | 다채널 등록 채널 정보 (**[Channel](models.md#channel)**)| O |
+<!-- | inputType | Enum | 입력 영상 종류 (**[InputType](models.md#inputtype)**) | O | -->
 
 
 <br>
@@ -47,9 +54,13 @@ POST /v2/va/register-channel
 ```
 // Ok
 {
-    "channelId": "X1ashF0t",
-    "code": 0,
+  "channelIds": [
+    "d94f351f",
+    "2bb50e6e"
+  ],
+  "code": 0
 }
+
 // Fail
 {
     "code": 102,
@@ -59,25 +70,20 @@ POST /v2/va/register-channel
 
 | Name | Type | Description |
 | :---- | :---- |:---- |
-| channelId | String | 채널 ID |
+| channelIds | String[] | 채널 ID 리스트 |
 | code | Integer | 오류 코드 (**[Error Code](models.md#error-code)**) |
 | message | String | 오류 메시지 |
 
 <br>
 
 <!-- ### Remarks
-
 #### nodeId
 채널의 입력 영상에 대해 비디오 분석을 수행 할 컴퓨팅 노드의 ID 입니다. 비디오 분석을 수행하기 위해서는 최소 1개의 컴퓨팅 노드가 필요합니다. -->
-
-<!-- #### siblings
-
-동일한 목표지점을 촬영하는 채널인 경우, sibling 관계가 될 수 있습니다. 예를 들어, 같은 위치에서 같은 목표지점을 촬영하도록 일반카메라와 열화상카메라 CCTV가 각각 설치 된 경우입니다. 이 때, 두 CCTV 영상들의 분석결과는 서로 상관관계가 있으므로, 이것을 응용 앱에서 활용하기 위해 본 파라메터를 이용하여 sibling 관계를 관리할 수 있습니다. -->
 
 <br><br>
 
 # 채널 보기
-채널의 상세 정보를 조회합니다.
+채널의 정보를 조회합니다.
 
 <br>
 
@@ -105,6 +111,8 @@ POST /v2/va/get-channel
   "channelId": "6a694f0e",
   "inputUri": "rtsp://192.168.0.70/vod/pertest_5m_15m_fall",
   "channelName": "TEST_CHANNEL_NAME",
+  "FrameWidth": 1920,
+  "FrameHeight": 1080,
   "inputType": 0,
   "status": 0,
   "code": 0,
@@ -122,6 +130,8 @@ POST /v2/va/get-channel
 | channelId | String | 채널 ID |
 | inputUri | String | 입력 영상 주소 |
 | channelName | String | 채널 이름 |
+| FrameWidth | Integer | 영상 너비 |
+| FrameHeight | Integer | 영상 높이 |
 | inputType | Integer | 입력 영상 종류(**[InputType](models.md#inputtype)**) |
 | status | Enum | 채널 상태 (**[ChannelStatus](#channelstatus)**)|
 
@@ -154,14 +164,16 @@ POST /v2/va/list-channel
             "channelId": "6a694f0e",
             "inputUri": "rtsp://192.168.0.70/vod/pertest_5m_15m_fall",
             "channelName": "TEST_CHANNEL_NAME",
-            "inputType": 0,
+            "FrameWidth": 1920,
+            "FrameHeight": 1080,
             "status": 0
         },
         {
             "channelId": "6a694f0e",
             "inputUri": "rtsp://192.168.0.70/vod/pertest_5m_15m_fall",
             "channelName": "TEST_CHANNEL_NAME",
-            "inputType": 0,
+            "FrameWidth": 1920,
+            "FrameHeight": 1080,
             "status": 0
         }
     ]
@@ -224,7 +236,7 @@ POST /v2/va/update-channel
 <br><br>
 
 # 채널 삭제하기
-채널의 정보를 삭제합니다.
+등록된 채널을 삭제합니다.
 <br>
 
 ### Request
@@ -233,15 +245,22 @@ POST /v2/va/update-channel
 POST /v2/va/remove-channel
 
 {
-    "nodeId" : "5c009c52",
-    "channelId": "6a694f0e",
+  "nodeId": "f31039c9",
+  "channels": [
+      {
+        "channelId":"759b6a01"
+      },
+      {
+        "channelId":"6a694f0e"
+      }
+    ]
 }
 ```
 
 | Name | Type | Description | Required |
 | :---- | :---- |:---- |:---- |
 | nodeId | String | 컴퓨팅 노드 ID | O |
-| channelId | String | 채널 ID | O |
+| channels | Channel[] | 다채널 등록 채널 정보 (**[Channel](models.md#channel)**)| O |
 
 <br>
 
@@ -250,9 +269,13 @@ POST /v2/va/remove-channel
 ```
 // Ok
 {
-  "channelId": "8cc0a5ec",
+  "channelIds": [
+    "759b6a01",
+    "6a694f0e"
+  ],
   "code": 0
 }
+
 // Fail
 {
   "code": 404,
@@ -262,6 +285,7 @@ POST /v2/va/remove-channel
 
 | Name | Type | Description |
 | :---- | :---- |:---- |
+| channelIds | String[] | 채널 ID 리스트 |
 | code | Integer | 오류 코드 (**[Error Code](models.md#error-code)**) |
 | message | String | 오류 메시지 |
 
@@ -333,7 +357,7 @@ POST /v2/va/callibrate
 
 <br><br>
 
-# 영상 캘리브레이션 (자동 - 개발중)
+<!-- # 영상 캘리브레이션 (자동 - 개발중)
 
 해당 채널의 영상 좌표 정보를 획득하여, 좌표 왜곡 보정 기능을 지원합니다.<p>
 * 캘리브레이션 지원 라이센스를 발급 받아야 사용 가능합니다.
@@ -403,9 +427,9 @@ POST /v2/va/callibrate
 | code | Integer | 오류 코드 (**[Error Code](models.md#error-code)**) |
 | message | String | 오류 메시지 |
 
-<br><br>
+<br><br> -->
 
-# 스냅샷
+<!-- # 스냅샷
 
 채널의 영상 스냅샷을 반환합니다.
 
@@ -447,4 +471,4 @@ POST /v2/va/snapshot
 | :---- | :---- |:---- |
 | imageData | String | 영상 데이터 (Jpeg -> Base64 Encoding) |
 | code | Integer | 오류 코드 (**[Error Code](models.md#error-code)**) |
-| message | String | 오류 메시지 |
+| message | String | 오류 메시지 | -->
