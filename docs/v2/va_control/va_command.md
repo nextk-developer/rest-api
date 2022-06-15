@@ -193,3 +193,64 @@ POST /v2/va/remove-facedb
 | message | String | 오류 메시지 |
 
 <br>
+
+# 등록 얼굴 리스트 조회
+
+이 API를 이용하여 등록된 관심 얼굴을 조회할 수 있습니다.
+
+#### Request
+
+```
+POST /v2/va/list-facedb
+
+{
+    "nodeId": "6d286401"
+}
+```
+
+| Name | Type | Description | Required |
+| :---- | :---- |:---- |:---- |
+| nodeId | String | 컴퓨팅 노드 ID | O |
+
+<br>
+
+#### Response
+```
+//Ok
+{
+  "faceDBItems": [
+    {
+      "uid": "a5a75807",
+      "score": 0.5,
+      "features": [
+        [
+          -0.026016235,
+          0.6699219,
+          -0.6401367,
+          -0.51708984,
+          0.12841797,
+		  ...
+        ]
+      ]
+    }
+  ]
+}
+//Fail
+{
+    "code" : 0,
+    "message" : "reason"
+}
+
+```
+
+| Name | Type | Description |
+| :---- | :---- |:---- |
+| faceDBItems |  | 등록 얼굴 ID |
+
+| Name | Type | Description |
+| :---- | :---- |:---- |
+| uid | String | 등록 얼굴 ID |
+| score | Double | 오류 코드 ([Error Code](models.md#error-code)) |
+| features | Double[] | 오류 메시지 |
+
+<br>

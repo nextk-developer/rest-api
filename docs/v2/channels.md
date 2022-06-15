@@ -114,6 +114,8 @@ POST /v2/va/get-channel
   "FrameWidth": 1920,
   "FrameHeight": 1080,
   "inputType": 0,
+  "rtspUrl": "rtsp://192.168.0.127:55583",
+  "rpcPort": 55600,
   "status": 0,
   "code": 0,
 }
@@ -132,6 +134,8 @@ POST /v2/va/get-channel
 | channelName | String | 채널 이름 |
 | FrameWidth | Integer | 영상 너비 |
 | FrameHeight | Integer | 영상 높이 |
+| rtspUrl | String | RTSP 스트리밍 주소 (미디어 서버 제공시) |
+| rpcPort | Integer | 이벤트 메타 포트 |
 | inputType | Integer | 입력 영상 종류(**[InputType](models.md#inputtype)**) |
 | status | Enum | 채널 상태 (**[ChannelStatus](#channelstatus)**)|
 
@@ -161,12 +165,14 @@ POST /v2/va/list-channel
 { 
     "channels" : [
         {
-            "channelId": "6a694f0e",
-            "inputUri": "rtsp://192.168.0.70/vod/pertest_5m_15m_fall",
-            "channelName": "TEST_CHANNEL_NAME",
-            "FrameWidth": 1920,
-            "FrameHeight": 1080,
-            "status": 0
+			"channelId": "7e1f8784",
+			"inputUri": "rtsp://211.198.128.30/vod/line",
+			"channelName": "7e1f8784",
+			"frameWidth": 1920,
+			"frameHeight": 1080,
+			"status": 0,
+			"rtspUrl": "rtsp://192.168.0.127:55583",
+			"rpcPort": 55600
         },
         {
             "channelId": "6a694f0e",
@@ -174,7 +180,9 @@ POST /v2/va/list-channel
             "channelName": "TEST_CHANNEL_NAME",
             "FrameWidth": 1920,
             "FrameHeight": 1080,
-            "status": 0
+            "status": 0,
+			"rtspUrl": "rtsp://192.168.0.127:55585",
+			"rpcPort": 55700
         }
     ]
 }
