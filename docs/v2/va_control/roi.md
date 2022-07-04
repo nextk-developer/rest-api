@@ -233,28 +233,30 @@ ROI 설정을 수정합니다.
 POST /v2/va/update-roi
 
 {
-  "nodeId": "c6a45bc6",
-  "channelId": "e84fcac4",
-  "roiId": "88e2a515",
-  "roiNmae" : "UPDATE_ROI",
+  "nodeId": "aa076f4c",
+  "channelId": "5ffd82eb",
+  "roiId": "4bb388e0",
+  "eventType": "EVT_LOITERING",
+  "roiName": "ROI_NAME",
+  "description": "Loitering Event",
   "roiDots": [
     {
-      "x": 0.0,
-      "y": 0.0
+      "X": 0.0,
+      "Y": 0.0
     },
     {
-      "x": 0.84,
-      "y": 0.0
+      "X": 1.0,
+      "Y": 0.0
     },
     {
-      "x": 0.84,
-      "y": 0.22
+      "X": 1.0,
+      "Y": 1.0
     },
     {
-      "x": 0.0,
-      "y": 0.5
+      "X": 0.0,
+      "Y": 1.0
     }
-  ],
+  ]
 }
 ```
 
